@@ -1,17 +1,16 @@
 <?php
 
+// Database
 require_once 'database.class.php';
-require_once 'student/student.inc.php';
-require_once 'student/studentAction.inc.php';
 
-$studentAction = new studentAction();
+// Students
+//require_once 'student/student.inc.php';
+//require_once 'student/studentAction.inc.php';
+//$studentAction = new studentAction();
 
-$studentnr = '83239';
-$wachtwoord = 'geheim';
+// Assignments
+require_once 'assignment/assignment.inc.php';
+require_once 'assignment/assignmentAction.inc.php';
+$assignmentAction = new assignmentAction();
 
-if($studentAction->LoginUser($studentnr, $wachtwoord)) {
-    echo "GOed";
-} else {
-    echo 'Yeet';
-}
-
+print_r($assignmentAction->ShowAllAssignments());

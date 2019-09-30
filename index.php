@@ -1,9 +1,11 @@
 <?php
+require_once 'assets/inc/showerrors.php';
+
 session_start();
 
 // If user is already logged in
 if(isset($_SESSION['id'])) {
-    header("beroeps/index.php");
+    header("Location: beroeps/index.php");
 }
 
 ?>
@@ -31,6 +33,15 @@ if(isset($_SESSION['id'])) {
     </section>
 
     <section id="login_box">
+        <div class="loginerror">
+            <p>
+                <?php
+                    if(isset($_SESSION['loginerror'])) {
+                        echo $_SESSION['loginerror'];
+                    }
+                ?>
+            </p>
+        </div>
         <form action="assets/db/proc/loginProcess.php" method="POST">
             <div class="container" style="width: 40%">
                 <div class="row">

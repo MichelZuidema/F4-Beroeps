@@ -1,4 +1,6 @@
 <?php
+require_once '../../inc/showerrors.php';
+
 session_start();
 
 /**
@@ -18,10 +20,10 @@ class studentAction extends Student
             $_SESSION['klas'] = $studentData[0]['klas'];
             $_SESSION['naam'] = $studentData[0]['naam'];
 
-            header("../../../beroeps/index.php");
+            header("Location: ../../../beroeps/index.php");
         } else {
-            $_SESSION['errormsg'] = "Your password doesn't match!";
-            header("../../../index.php");
+            $_SESSION['loginerror'] = "Your password doesn't match!";
+            header("Location: ../../../index.php");
         }
     }
 }

@@ -1,5 +1,8 @@
 <?php
 
+require_once '../../inc/showerrors.php';
+
+
 require_once '../database.class.php';
 require_once '../student/student.inc.php';
 require_once '../student/studentAction.inc.php';
@@ -17,7 +20,7 @@ if(isset($_POST['submit'])) {
         echo "Username field is empty!";
     }
 } else {
-    echo 'WRONG HTTP REQUEST';
+    echo "WRONG POST METHOD";
 }
 
 

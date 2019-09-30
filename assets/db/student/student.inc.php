@@ -1,4 +1,5 @@
 <?php
+require_once '../../inc/showerrors.php';
 
 /**
  * User
@@ -20,7 +21,7 @@ class Student extends Database
 
             return $data;
         } else {
-            echo "No Students Found!";
+            return "No Students Found!";
         }
     }
 }

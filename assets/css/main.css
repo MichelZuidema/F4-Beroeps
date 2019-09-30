@@ -48,7 +48,6 @@ header #branding h1{
 
 header nav{
     float:right;
-    margin-top:10px;
 }
 
 header , header .current a{
@@ -121,4 +120,60 @@ input[type=submit] {
     cursor: pointer;
     float: right;
     width: 75%;
+}
+
+.loginerror {
+    text-align: center;
+    color: red;
+    font-size: 2em;
+}
+
+/* Assignment Styles */
+#grid-assignments {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+}
+
+.assignment-bottom:after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: gray;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.assignment h2 {
+    font-size: 2em;
+}
+
+.assignment p {
+    margin-top: -2vh;
+}
+
+.assignment a {
+    text-decoration: none;
+    color: #8fe507;
+    font-size: 1.2em;
+}
+
+.assignmentpage {
+
+}
+
+.assignmentpage h2 {
+    font-size: 2em;
+}
+
+.assignmentpage h2:after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: gray;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.assignmentpage p {
+
 }
