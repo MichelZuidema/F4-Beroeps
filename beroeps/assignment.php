@@ -16,6 +16,8 @@ require_once '../assets/inc/functions.php';
 $assignmentAction = new assignmentAction();
 $assignment = $assignmentAction->ShowAssignmentDetails(numhash($_GET['id']));
 
+print_r($_SESSION);
+
 ?>
 <html>
     <head>
@@ -35,8 +37,7 @@ $assignment = $assignmentAction->ShowAssignmentDetails(numhash($_GET['id']));
 
         <section id="banner">
             <div class="container">
-                <h1>Lorem Ipsum is simply dummy text of the printing</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing</p>
+                <h1><?php echo $assignment['naam']; ?></h1>
             </div>
         </section>
 

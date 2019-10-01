@@ -19,6 +19,7 @@ class studentAction extends Student
             $_SESSION['studentnummer'] = $studentData[0]['studentnummer'];
             $_SESSION['klas'] = $studentData[0]['klas'];
             $_SESSION['naam'] = $studentData[0]['naam'];
+            $_SESSION['begeleider'] = $studentData['begeleider'];
 
             header("Location: ../../../beroeps/index.php");
         } else {

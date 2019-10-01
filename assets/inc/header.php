@@ -7,6 +7,7 @@
             <nav>
                 <ul>
                     <li><a href="#"><?= $_SESSION['naam']; ?></a></li>
+                    <li><a href="index.php">Alle Opdrachten</a></li>
                     <li><a href="../assets/db/logout.php">Logout</a></li>
                 </ul>
             </nav>
