@@ -44,7 +44,7 @@ $studentAction = new studentAction();
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <form action="assets/db/proc/loginProcess.php" method="POST">
+                <form action="../assets/db/proc/newAssignmentProcess.php" method="POST">
                     <div class="container" style="width: 40%">
                         <h2>Nieuwe Opdracht</h2>
                         <div class="row">
@@ -61,9 +61,9 @@ $studentAction = new studentAction();
                             </div>
                             <div class="col-75">
                                 <select name="assignmentGenre">
-                                    <option value="">Web</option>
-                                    <option value="">Game</option>
-                                    <option value="">Mobile</option>
+                                    <option value="Web">Web</option>
+                                    <option value="Game">Game</option>
+                                    <option value="Mobile">Mobile</option>
                                 </select>
                             </div>
                         </div>
@@ -72,13 +72,13 @@ $studentAction = new studentAction();
                                 <label for="assignmentLevel">Niveau: </label>
                             </div>
                             <div class="col-75">
-                                <select name="assignmentGenre">
-                                    <option value="">A</option>
-                                    <option value="">B</option>
-                                    <option value="">C</option>
-                                    <option value="">D</option>
-                                    <option value="">E</option>
-                                    <option value="">F</option>
+                                <select name="assignmentDifficulty">
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="F">F</option>
                                 </select>
                             </div>
                         </div>
