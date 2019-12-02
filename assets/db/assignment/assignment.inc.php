@@ -39,6 +39,10 @@ class Assignment extends Database
             echo "Assignment Not Found!";
         }
     }
+
+    protected function CreateNewAssignment($assignment) {
+
+    }
 }
 
 ?>

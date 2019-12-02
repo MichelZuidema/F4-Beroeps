@@ -1,5 +1,4 @@
 <?php
-require_once '../../inc/showerrors.php';
 
 /**
  * User

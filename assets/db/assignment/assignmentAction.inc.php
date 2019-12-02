@@ -21,6 +21,12 @@ class assignmentAction extends Assignment
 
         return $data;
     }
+
+    public function ProcessNewAssignment($assignment) {
+        $data = $this->CreateNewAssignment($assignment);
+
+        return $data;
+    }
 }
 
 ?>

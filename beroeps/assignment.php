@@ -16,8 +16,6 @@ require_once '../assets/inc/functions.php';
 $assignmentAction = new assignmentAction();
 $assignment = $assignmentAction->ShowAssignmentDetails(numhash($_GET['id']));
 
-print_r($_SESSION);
-
 ?>
 <html>
     <head>
