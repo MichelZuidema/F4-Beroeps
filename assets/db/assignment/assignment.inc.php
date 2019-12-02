@@ -80,6 +80,24 @@ class Assignment extends Database
             return "Assignment was empty!";
         }
     }
+
+    protected function DeleteAssignment($id) {
+        if(!empty($id)) {
+            $sql = "DELETE FROM `opdracht` WHERE id = $id";
+
+            try {
+                if($this->connect()->query($sql)) {
+                    return true;
+                } else {
+                    return "Er is iets foutgegaan met het verwijderen uit de database!";
+                }
+            } catch (Exception $e) {
+                return $e;
+            }
+        } else {
+            return "Er was iets foutgegaan met het doorgeven van de parameters.";
+        }
+    }
 }
 
 ?>

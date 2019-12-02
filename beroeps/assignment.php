@@ -9,13 +9,16 @@ if(!isset($_SESSION['id'])) {
 }
 
 require_once '../assets/db/database.class.php';
+require_once '../assets/db/student/student.inc.php';
+require_once '../assets/db/student/studentAction.inc.php';
 require_once '../assets/db/assignment/assignment.inc.php';
 require_once '../assets/db/assignment/assignmentAction.inc.php';
 require_once '../assets/inc/functions.php';
 
 $assignmentAction = new assignmentAction();
-$assignment = $assignmentAction->ShowAssignmentDetails(numhash($_GET['id']));
+$studentAction = new studentAction();
 
+$assignment = $assignmentAction->ShowAssignmentDetails(numhash($_GET['id']));
 ?>
 <html>
     <head>
@@ -35,6 +38,22 @@ $assignment = $assignmentAction->ShowAssignmentDetails(numhash($_GET['id']));
 
         <section id="banner">
             <div class="container">
+                <?php if($studentAction->isMentor()) : ?>
+                    <a href="#"><button class="btnDeleteAssignment" id="myBtn" onclick="openModal();"><b>Verwijder Opdracht</b></button></a>
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h3>Weet u zeker dat u de opdracht '<span><?= $assignment['naam']; ?></span>' wilt verwijderen?</h3>
+                            <div>
+                                <a href="../assets/db/proc/deleteAssignment.php?id=<?= numhash($assignment['id']); ?>"><button id="modalYes">Ja</button></a>
+                                <button id="modalNo">Nee</button>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
                 <h1><?php echo $assignment['naam']; ?></h1>
             </div>
         </section>
@@ -51,5 +70,7 @@ $assignment = $assignmentAction->ShowAssignmentDetails(numhash($_GET['id']));
                 </section>
             </div>
         </main>
+
+        <script src="../assets/js/modal.js"></script>
     </body>
 </html>

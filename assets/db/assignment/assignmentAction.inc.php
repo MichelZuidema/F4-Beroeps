@@ -27,6 +27,12 @@ class assignmentAction extends Assignment
 
         return $data;
     }
+
+    public function RemoveAssignment($id) {
+        $data = $this->DeleteAssignment($id);
+
+        return $data;
+    }
 }
 
 ?>
